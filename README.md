@@ -111,7 +111,7 @@ Contributions are welcome! Please read our Contribution Guidelines.
 📞 Support
 For technical support, open an issue or contact:
 
-Email: support@neurogenesis.io
+Email: nanotec@live.ru
 
 Discord: NeuroGenesis Community
 
