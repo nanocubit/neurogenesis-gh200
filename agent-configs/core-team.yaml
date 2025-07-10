@@ -1,0 +1,32 @@
+team:
+  name: genesis_core_team
+  agents:
+    - id: project_manager
+      type: planning
+      model: nim://genesis-codegen
+      tools: [task_decomposer, knowledge_retriever]
+      constraints: [deadline_aware, resource_optimized]
+    
+    - id: security_auditor
+      type: tool-using
+      model: nim://genesis-knowledge
+      tools: [code_scanner, vuln_detector]
+      security_level: critical
+
+workflow:
+  - phase: analysis
+    agent: project_manager
+    params: 
+      goal: "{{task}}"
+      constraints: ["neuro_ui_std", "quantum_safe"]
+  
+  - phase: implementation
+    agent: code_generator
+    params:
+      language: python
+      quality: high
+  
+  - phase: validation
+    agent: security_auditor
+    params:
+      scan_depth: deep
