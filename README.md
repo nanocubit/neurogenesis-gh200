@@ -1,5 +1,5 @@
 NeuroGenesis MCP: Autonomous Development System for GENESIS OS
-https://via.placeholder.com/800x400.png?text=NeuroGenesis+MCP+Architecture
+
 
 NeuroGenesis MCP is an end-to-end autonomous development system optimized for NVIDIA GH200 Superchip clusters, designed to build and evolve the GENESIS OS neuro-adaptive operating system with minimal human intervention.
 
@@ -36,7 +36,13 @@ echo "NGC_API_KEY=your_ngc_key" >> .env
 ./deploy-genesis.sh
 🧠 System Architecture
 Diagram
-Code
+graph TD
+    A[GH200 Cluster] --> B[NIM Microservices]
+    B --> C[NeMo Agents]
+    C --> D[Knowledge Graph]
+    D --> E[GENESIS OS]
+    F[Cursor IDE] --> C
+    C --> F
 
 
 
