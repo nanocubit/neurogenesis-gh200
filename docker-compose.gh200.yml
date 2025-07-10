@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  neo4j-gh200:
+    image: neo4j:5.13-enterprise
+    environment:
+      NEO4J_dbms_memory_heap_maxSize: 80G
+      NEO4J_dbms_memory_pagecache_size: 40G
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD}
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - gh200-neo4j-data:/data
+
+  monitoring:
+    image: grafana/grafana:10.2.0
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./monitoring/dashboards:/var/lib/grafana/dashboards
+
+volumes:
+  gh200-neo4j-data:
